@@ -34,7 +34,7 @@ func (c *Client) AddCluster(cluster *cluster.Cluster) {
 	c.clusters.Store(cluster, cluster)
 }
 
-func unknownClusterErr(name string) *cluster.Error {
+func unknownClusterErr(name string) error {
 	return cluster.NewError("UnknownCluster", fmt.Errorf("cluster %s not exist", name))
 }
 
