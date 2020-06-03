@@ -2,7 +2,7 @@ package cluster
 
 import (
 	"fmt"
-	"github.com/giantpoplar/pool"
+	"github.com/hangb2/pool"
 	"io"
 )
 

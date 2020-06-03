@@ -1,7 +1,7 @@
 package cluster
 
 import (
-	"github.com/giantpoplar/pool"
+	"github.com/hangb2/pool"
 	"time"
 )
 

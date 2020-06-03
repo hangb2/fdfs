@@ -3,7 +3,7 @@ package cluster
 import (
 	"encoding/binary"
 	"fmt"
-	"github.com/giantpoplar/pool"
+	"github.com/hangb2/pool"
 )
 
 // Tracker implements a client to access a FastDFS tracker node
