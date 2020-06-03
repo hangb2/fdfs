@@ -1,41 +1,25 @@
 package cluster
 
-import "fmt"
+import (
+	"fmt"
+)
 
-type Error struct {
-	name   string
-	detail error
+func NewError(name string, err error) error {
+	return fmt.Errorf("err: %v, name: %s, ", err, name)
 }
 
-func NewError(name string, err error) *Error {
-	return &Error{name, err}
+func createPoolErr(err error) error {
+	return fmt.Errorf("CreatePoolErr %v", err)
 }
 
-func (err *Error) Error() string {
-	return fmt.Sprintf("%s:%s", err.name, err.detail)
+func getConnErr(err error) error {
+	return fmt.Errorf("GetConnFromPoolErr %v", err)
 }
 
-func (err *Error) Name() string {
-	return err.name
+func unexpectedPkgLenErr(receive, expect int) error {
+	return fmt.Errorf("UnexpectedLenErr received pkg length %d != expected %d", receive, expect)
 }
 
-func (err *Error) Wrap(name string) *Error {
-	err.name = fmt.Sprintf("%s.%s", name, err.name)
-	return err
-}
-
-func createPoolErr(err error) *Error {
-	return NewError("CreatePoolErr", err)
-}
-
-func getConnErr(err error) *Error {
-	return NewError("GetConnFromPoolErr", err)
-}
-
-func unexpectedPkgLenErr(receive, expect int) *Error {
-	return NewError(" UnexpectedLenErr", fmt.Errorf("received pkg length %d != expected %d", receive, expect))
-}
-
-func wrongFidErr(fid string) *Error {
-	return NewError("WrongFidErr", fmt.Errorf("fid is not with format group/filename: %s", fid))
+func wrongFidErr(fid string) error {
+	return fmt.Errorf("WrongFidErr fid is not with format group/filename: %s", fid)
 }

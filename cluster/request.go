@@ -13,7 +13,7 @@ type request struct {
 	respLimit int64
 }
 
-func (r *request) do() ([]byte, *Error) {
+func (r *request) do() ([]byte, error) {
 	//send header
 	if _, err := r.c.Write(r.header); err != nil {
 		return nil, NewError("WriteRequestHeaderErr", err)
@@ -28,7 +28,7 @@ func (r *request) do() ([]byte, *Error) {
 	return r.readResponse()
 }
 
-func (r *request) readResponse() ([]byte, *Error) {
+func (r *request) readResponse() ([]byte, error) {
 	//receive response header
 	h := header{}
 	if err := h.read(r.c); err != nil {
