@@ -2,7 +2,7 @@ package fdfs
 
 import (
 	"fmt"
-	"github.com/giantpoplar/fdfs/cluster"
+	"github.com/hangb2/fdfs/cluster"
 	"sync"
 )
 

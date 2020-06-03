@@ -1,7 +1,7 @@
 # fdfs
 
-[![GoDoc](https://godoc.org/github.com/giantpoplar/fdfs?status.png)](https://godoc.org/github.com/giantpoplar/fdfs)
-![Travis (.org) branch](https://img.shields.io/travis/giantpoplar/fdfs/master.svg)
+[![GoDoc](https://godoc.org/github.com/hangb2/fdfs?status.png)](https://godoc.org/github.com/hangb2/fdfs)
+![Travis (.org) branch](https://img.shields.io/travis/hangb2/fdfs/master.svg)
 
 FDFS is a pure golang client for [FastDFS](https://github.com/happyfish100/fastdfs).
 
@@ -105,4 +105,4 @@ fdfs.UpdateStorageGroup("fdfs_cluster1", "g1", your_storage_config)
 ```
 ### API
 
-[GoDoc](https://www.godoc.org/github.com/giantpoplar/fdfs)
+[GoDoc](https://www.godoc.org/github.com/hangb2/fdfs)
